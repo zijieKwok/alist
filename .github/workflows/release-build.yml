@@ -1,4 +1,4 @@
-name: Build
+name: ailst
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    name: Build ${{ matrix.arch }}-${{ matrix.sdk }}
+    name: ailst ${{ matrix.arch }}-${{ matrix.sdk }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -49,7 +49,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Build
+      - name: ailst
         uses: sbwml/openwrt-gh-action-sdk@go1.21
         env:
           ARCH: ${{ matrix.arch }}-${{ matrix.sdk }}
